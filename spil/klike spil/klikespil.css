@@ -1,0 +1,21 @@
+.card {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #F0FFFF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: "Trebuchet MS", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card:hover {
+  border-color: #1E90FF;
+}
+
+h1{
+  margin-left: auto;
+  margin-right: auto;
+}
