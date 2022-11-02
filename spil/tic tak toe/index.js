@@ -99,9 +99,18 @@ class Leaut {
 const leaut = new Leaut()
 //addEventListener('keydown', keyDown, false)
 //addEventListener('keyup', keyUp, false)
+
+function update() {
+  for (let i = 1; i = 9; i++) {
+    console.log(i)
+  }
+}
+
+
 function animate() {
   requestAnimationFrame(animate)
   c.clearRect(0, 0, canvas.width, canvas.height)
   leaut.draw()
+  update()
 }
 animate()
