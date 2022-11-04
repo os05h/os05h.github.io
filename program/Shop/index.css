@@ -19,3 +19,8 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
+P {
+
+  text-size-adjust: 150%;
+
+}
