@@ -10,7 +10,7 @@ function add(kradd, item) {
 }
 function reset() {
     kr = 0;
-    cart = [];
+    A.length = 0
     document.getElementById("kr").innerHTML = kr;
     document.getElementById("demo").innerHTML = cart;
 }
