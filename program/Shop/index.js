@@ -1,5 +1,5 @@
 var kr = 0;
-var cart = [];
+const cart = [];
 
 function add(kradd, item) {
     kr = kr + kradd;
