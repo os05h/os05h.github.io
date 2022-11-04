@@ -7,7 +7,29 @@
     <meta charset="utf-8" />
 </header>
 <main>
-    PRIS:<p id=kr>0</p>
+
+    <div class="container" style="display: flex; height: 500px;">
+        <div style="width: 25%; ">
+            PRIS:<p id=kr>0</p>
+        </div>
+        <div style="flex-grow: 1; background: blue;">
+            <div class="container" style="display: flex; hight:500px">
+                <div style="width: 25%; ">
+                    <article class="card" onclick="reset()" id=RESET>
+                        <h1>RESET</h1>
+                    </article>
+                </div>
+                <div style="width:25%">
+                    <article class="card" onclick="add(15)" id=OREO>
+                        <h1>OREO</h1>
+                        <p>15 kr.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <article class="card" onclick="reset()" id=RESET>
         <h1>RESET</h1>
     </article>
