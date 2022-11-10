@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<header>
+
+    <link type="text/css" rel="stylesheet" href="index.css" />
+    <script type="text/javascript" src="index.js"></script>
+    <meta charset="utf-8" />
+    <title onload="load()">Shop 2.0</title>
+</header>
+<main>
+    <div class="container" style="display: flex; height: 500px">
+        <div style="width: 10%; ">
+            <h1> PRIS:</h1>
+            <h1 id=kr>0</h1>
+            <p id="cart"></p>
+        </div>
+        <div class="vandret">
+            <div class="felt">
+                <article class="card" onclick="reset()" id=RESET>
+                    <h1>RESET</h1>
+                </article>
+            </div>
+            <div class="felt">
+                <article class="card" onclick="add(pris[1], item[1])">
+                    <h1 id="nr1"></h1>
+                    <h1 id="prisnr1"></h1>
+                </article>
+            </div>
+            <div class="felt">
+                <article class="card" onclick="add(10, 'MENTOS')" id=MENTOS>
+                    <h1>MENTOS</h1>
+                    <h1>10 kr.</h1>
+                </article>
+            </div>
+        </div>
+    </div>
+</main>
+
+</html>
