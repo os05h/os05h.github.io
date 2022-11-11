@@ -5,35 +5,51 @@
     <link type="text/css" rel="stylesheet" href="index.css" />
     <script type="text/javascript" src="index.js"></script>
     <meta charset="utf-8" />
-    <title onload="load()">Shop 2.0</title>
+    <title>Shop 2.0</title>
 </header>
 <main>
-    <div class="container" style="display: flex; height: 500px">
-        <div style="width: 10%; ">
-            <h1> PRIS:</h1>
-            <h1 id=kr>0</h1>
-            <p id="cart"></p>
-        </div>
-        <div class="vandret">
-            <div class="felt">
-                <article class="card" onclick="reset()" id=RESET>
+
+    <body>
+        <div id="example-wrapper">
+
+            <div id="side-bar-section" class="example-section pris">
+                <h1> PRIS:</h1>
+                <h1 id="kr">100</h1>
+            </div>
+            <div id="side-bar-cart" class="example-section cart">
+                <div style="width: 90%">
+                    <p>POLO:</p>
+                    <p>SODAVAND:</p>
+                </div>
+                <div style="width:10%">
+                    <p id="nr1">0</p>
+                    <p id="nr2">0</p>
+                </div>
+            </div>
+
+            <div id="shape-section" class="example-section">
+                <button type="button" class="example-button" onclick="reset()">
                     <h1>RESET</h1>
-                </article>
+                </button>
+                <button type="button" class="example-button" onclick="add(5,'POLO',1)">
+                    <h1>POLO</h1>
+                </button>
+                <button type="button" class="example-button" onclick="add(5,'SODAVAND',2)">
+                    <h1>SODAVAND</h1>
+                </button>
+                <button type="button" class="example-button">
+                    <i class="fa-solid fa-hexagon"></i>
+                </button>
+                <button type="button" class="example-button">
+                    <i class="fa-solid fa-star"></i>
+                </button>
+                <button type="button" class="example-button">
+                    <i class="fa-solid fa-rhombus"></i>
+                </button>
             </div>
-            <div class="felt">
-                <article class="card" onclick="add(pris[1], item[1])">
-                    <h1 id="nr1"></h1>
-                    <h1 id="prisnr1"></h1>
-                </article>
-            </div>
-            <div class="felt">
-                <article class="card" onclick="add(10, 'MENTOS')" id=MENTOS>
-                    <h1>MENTOS</h1>
-                    <h1>10 kr.</h1>
-                </article>
-            </div>
-        </div>
-    </div>
+    </body>
 </main>
+
+
 
 </html>

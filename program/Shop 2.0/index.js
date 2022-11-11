@@ -1,28 +1,28 @@
 var kr = 0;
 const cart = [];
-const item = ["POLO", "SODAVAND"]
-const pris = [5, 5]
+const smartcart = [0, 0];
+const ids = ["nr1", "nr2"];
+const pris = [5, 5];
 
-function add(kradd, item) {
-    kr = kr + kradd;
+function add(kradd, item, itemnr) {
+    kr = kr + pris[itemnr - 1];
     var items = cart.length;
     cart[items] = " " + item;
-    document.getElementById("cart").innerHTML = cart;
+    smartcart[itemnr - 1]++;
+    //    document.getElementById("cart").innerHTML = cart;
     document.getElementById("kr").innerHTML = kr;
+    for (let i = 0; i < 2; i++) {
+        document.getElementById(ids[i]).innerHTML = smartcart[i];
+    }
 }
 function reset() {
     kr = 0;
     cart.length = 0
+
     document.getElementById("kr").innerHTML = kr;
-    document.getElementById("cart").innerHTML = cart;
-    var nrr = "nr" + "1";
-    document.getElementById(nrr).innerHTML = item[i];
-    load();
-}
-function load() {
-
+    //    document.getElementById("cart").innerHTML = cart;
     for (let i = 0; i < 2; i++) {
-        document.getElementById("nr" + i).innerHTML = item[i];
-
+        smartcart[i] = 0;
+        document.getElementById(ids[i]).innerHTML = smartcart[i];
     }
 }
