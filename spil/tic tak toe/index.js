@@ -8,6 +8,8 @@ canvas.height = 300
 feltstait = [1, 1, 1, 2, 2, 2, 1, 1, 1, 1]
 feltx = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 felty = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+let x = 0;
+let y = 0;
 class Leaut {
   constructor() {
     this.x = 300
@@ -101,16 +103,17 @@ const leaut = new Leaut()
 //addEventListener('keyup', keyUp, false)
 
 function update() {
-  for (let i = 1; i = 9; i++) {
-    console.log(i)
-  }
-}
 
+}
+function mause(event) {
+  let x = event.pageX;  // Horizontal
+  let y = event.pageY;  // Vertical
+}
 
 function animate() {
   requestAnimationFrame(animate)
   c.clearRect(0, 0, canvas.width, canvas.height)
   leaut.draw()
-  //update()
+  update()
 }
 animate()
