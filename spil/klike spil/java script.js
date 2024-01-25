@@ -39,6 +39,9 @@ function rundop(input) {
     } else if (input >= 1000000000000 && input < 1000000000000000) {
         var i = Math.round(input / 10000000000) / 100;
         return i + "T";
+    } else if (input >= 1000000000000000 && input < 1000000000000000000) {
+        var i = Math.round(input / 10000000000000) / 100;
+        return i + "QA";
     } else {
         return input;
     }
