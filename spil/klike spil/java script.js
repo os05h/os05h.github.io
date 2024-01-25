@@ -27,22 +27,31 @@ function alle() {
 }
 
 function rundop(input) {
-    if (input >= 1000 && input < 1000000) {
+    if (input >= 10**3 && input < 10**6) {
         var i = Math.round(input / 10) / 100;
         return i + "k";
-    } else if (input >= 1000000 && input < 1000000000) {
-        var i = Math.round(input / 10000) / 100;
+    } else if (input >= 10**6 && input < 10**9) {
+        var i = Math.round(input / 10**4) / 100;
         return i + "M";
-    } else if (input >= 1000000000 && input < 1000000000000) {
-        var i = Math.round(input / 10000000) / 100;
+    } else if (input >= 10**9 && input < 10**12) {
+        var i = Math.round(input / 10**7) / 100;
         return i + "B";
-    } else if (input >= 1000000000000 && input < 1000000000000000) {
-        var i = Math.round(input / 10000000000) / 100;
+    } else if (input >= 10**12 && input < 10**15) {
+        var i = Math.round(input / 10**10) / 100;
         return i + "T";
-    } else if (input >= 1000000000000000 && input < 1000000000000000000) {
-        var i = Math.round(input / 10000000000000) / 100;
+    } else if (input >= 10**15 && input < 10**18) {
+        var i = Math.round(input / 10**13) / 100;
         return i + "QA";
-    } else {
+    } else if (input >= 10**18 && input < 10**21) {
+            var i = Math.round(input / 10**16) / 100;
+            return i + "QU";
+    } else if (input >= 10**21 && input < 10**24) {
+            var i = Math.round(input / 10**19) / 100;
+            return i + "QU";
+    } else if (input >= 10**24 && input < 10**27) {
+            var i = Math.round(input / 10**22) / 100;
+            return i + "QU";
+    } else 
         return input;
     }
 
