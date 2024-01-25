@@ -104,3 +104,13 @@ function upgrade() {
     }
     alle();
 }
+
+function reset() {
+    if (confirm("Reset?")) {
+        p = 0;
+        plus = 1;
+        upgrades = 1;
+        uplevel = 1;
+        back();
+    }
+}
