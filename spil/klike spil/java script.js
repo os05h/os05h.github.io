@@ -51,9 +51,9 @@ function rundop(input) {
     } else if (input >= 10 ** 24 && input < 10 ** 27) {
         var i = Math.round(input / 10 ** 22) / 100;
         return i + "Quadrillion";
-    } else
+    } else {
         return input;
-}
+    }
 
 }
 
