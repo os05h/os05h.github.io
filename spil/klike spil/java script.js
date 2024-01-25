@@ -71,9 +71,9 @@ function startgame() {
             plus = localStorage.getItem('plus');
             upgrades = localStorage.getItem('upgrades');
             uplevel = localStorage.getItem('uplevel');
-            alert("Save Loades")
+            alert("Save Loaded")
         } else {
-            alert("corumt save!")
+            alert("corrupt  save!")
         }
     }
 
