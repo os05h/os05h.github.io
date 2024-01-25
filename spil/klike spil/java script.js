@@ -64,6 +64,21 @@ function openshop() {
 }
 
 function startgame() {
+
+    if (localStorage.getItem('saved') == "true") {
+        if (localStorage.getItem('p') != null && localStorage.getItem('plus') != null && localStorage.getItem('upgrades') != null && localStorage.getItem('uplevel') != null) {
+            p = localStorage.getItem('p');
+            plus = localStorage.getItem('plus');
+            upgrades = localStorage.getItem('upgrades');
+            uplevel = localStorage.getItem('uplevel');
+            alert("Save Loades")
+        } else {
+            alert("corumt save!")
+        }
+    }
+
+
+
     document.getElementById("klikeside").style.display = "block";
     document.getElementById('startgame').style.display = 'none';
     document.getElementById('setingsside').style.display = 'none';
@@ -111,6 +126,17 @@ function reset() {
         plus = 1;
         upgrades = 1;
         uplevel = 1;
+        localStorage.clear();
         back();
     }
+}
+
+function save() {
+    localStorage.setItem('saved', true);
+    localStorage.setItem('p', p);
+    localStorage.setItem('plus', plus);
+    localStorage.setItem('upgrades', upgrades);
+    localStorage.setItem('uplevel', uplevel);
+    alert("Saved!");
+
 }
