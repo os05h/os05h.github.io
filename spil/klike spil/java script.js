@@ -27,33 +27,33 @@ function alle() {
 }
 
 function rundop(input) {
-    if (input >= 10**3 && input < 10**6) {
+    if (input >= 10 ** 3 && input < 10 ** 6) {
         var i = Math.round(input / 10) / 100;
-        return i + "k";
-    } else if (input >= 10**6 && input < 10**9) {
-        var i = Math.round(input / 10**4) / 100;
-        return i + "M";
-    } else if (input >= 10**9 && input < 10**12) {
-        var i = Math.round(input / 10**7) / 100;
-        return i + "B";
-    } else if (input >= 10**12 && input < 10**15) {
-        var i = Math.round(input / 10**10) / 100;
-        return i + "T";
-    } else if (input >= 10**15 && input < 10**18) {
-        var i = Math.round(input / 10**13) / 100;
-        return i + "QA";
-    } else if (input >= 10**18 && input < 10**21) {
-            var i = Math.round(input / 10**16) / 100;
-            return i + "QU";
-    } else if (input >= 10**21 && input < 10**24) {
-            var i = Math.round(input / 10**19) / 100;
-            return i + "QU";
-    } else if (input >= 10**24 && input < 10**27) {
-            var i = Math.round(input / 10**22) / 100;
-            return i + "QU";
-    } else 
+        return i + "Thousand";
+    } else if (input >= 10 ** 6 && input < 10 ** 9) {
+        var i = Math.round(input / 10 ** 4) / 100;
+        return i + "Million";
+    } else if (input >= 10 ** 9 && input < 10 ** 12) {
+        var i = Math.round(input / 10 ** 7) / 100;
+        return i + "Milliard";
+    } else if (input >= 10 ** 12 && input < 10 ** 15) {
+        var i = Math.round(input / 10 ** 10) / 100;
+        return i + "Billion";
+    } else if (input >= 10 ** 15 && input < 10 ** 18) {
+        var i = Math.round(input / 10 ** 13) / 100;
+        return i + "Billiard";
+    } else if (input >= 10 ** 18 && input < 10 ** 21) {
+        var i = Math.round(input / 10 ** 16) / 100;
+        return i + "Trillion";
+    } else if (input >= 10 ** 21 && input < 10 ** 24) {
+        var i = Math.round(input / 10 ** 19) / 100;
+        return i + "Trilliard";
+    } else if (input >= 10 ** 24 && input < 10 ** 27) {
+        var i = Math.round(input / 10 ** 22) / 100;
+        return i + "Quadrillion";
+    } else
         return input;
-    }
+}
 
 }
 
