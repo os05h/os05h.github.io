@@ -67,10 +67,10 @@ function startgame() {
 
     if (localStorage.getItem('saved') == "true") {
         if (localStorage.getItem('p') != null && localStorage.getItem('plus') != null && localStorage.getItem('upgrades') != null && localStorage.getItem('uplevel') != null) {
-            p = localStorage.getItem('p');
-            plus = localStorage.getItem('plus');
-            upgrades = localStorage.getItem('upgrades');
-            uplevel = localStorage.getItem('uplevel');
+            p = +localStorage.getItem('p');
+            plus = +localStorage.getItem('plus');
+            upgrades = +localStorage.getItem('upgrades');
+            uplevel = +localStorage.getItem('uplevel');
             alert("Save Loaded")
         } else {
             alert("corrupt  save!")
