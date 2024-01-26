@@ -51,6 +51,30 @@ function rundop(input) {
     } else if (input >= 10 ** 24 && input < 10 ** 27) {
         var i = Math.round(input / 10 ** 22) / 100;
         return i + "Quadrillion";
+    } else if (input >= 10 ** 27 && input < 10 ** 30) {
+        var i = Math.round(input / 10 ** 25) / 100;
+        return i + "Quadrilliard";
+    } else if (input >= 10 ** 30 && input < 10 ** 33) {
+        var i = Math.round(input / 10 ** 28) / 100;
+        return i + "Quintilion";
+    } else if (input >= 10 ** 33 && input < 10 ** 36) {
+        var i = Math.round(input / 10 ** 31) / 100;
+        return i + "Quintilliard";
+    } else if (input >= 10 ** 36 && input < 10 ** 39) {
+        var i = Math.round(input / 10 ** 34) / 100;
+        return i + "Sextillion";
+    } else if (input >= 10 ** 39 && input < 10 ** 42) {
+        var i = Math.round(input / 10 ** 37) / 100;
+        return i + "Sextilliard";
+    } else if (input >= 10 ** 42 && input < 10 ** 45) {
+        var i = Math.round(input / 10 ** 40) / 100;
+        return i + "Septillion";
+    } else if (input >= 10 ** 45 && input < 10 ** 48) {
+        var i = Math.round(input / 10 ** 43) / 100;
+        return i + "Septilliard";
+    } else if (input >= 10 ** 48 && input < 10 ** 51) {
+        var i = Math.round(input / 10 ** 46) / 100;
+        return i + "Octillion";
     } else {
         return input;
     }
