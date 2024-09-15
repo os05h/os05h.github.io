@@ -1,0 +1,28 @@
+---
+
+---
+
+<button
+  onclick="toggleDarkMode()"
+  class="bg-Keppel hover:bg-Mindaro hover:text-LapisLazuli">DarkMode</button
+>
+
+<script is:inline>
+  function toggleDarkMode() {
+    if (localStorage.theme === "dark") {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+    }
+  }
+</script>
+
+<style>
+  button {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+</style>
