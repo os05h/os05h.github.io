@@ -1,4 +1,5 @@
 ---
+import DarkmodeToggle from "./Darkmode-toggle.astro";
 import Social from "./Social.astro";
 ---
 
@@ -6,12 +7,19 @@ import Social from "./Social.astro";
     footer {
         display: flex;
         gap: 1rem;
-        margin-top: 2rem;
+        margin: 2rem;
         text-transform: uppercase;
+    }
+    div {
+        display: flex;
+        gap: 1rem;
     }
 </style>
 
-<footer>
-    <Social platform="github" username="os05h" />
-    <Social platform="instagram" username="oskarhegner" />
+<footer class="flex justify-between">
+    <div>
+        <Social platform="github" username="os05h" />
+        <Social platform="instagram" username="oskarhegner" />
+    </div>
+    <DarkmodeToggle class="" />
 </footer>

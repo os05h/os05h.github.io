@@ -1,8 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
+<BaseLayout title="Home">
+  <div>
+    <h1 class="dark:text-LightGreen2 text-3xl text-Cerulean">Welcome</h1>
+    <p class="dark:text-LightGreen2 text-Cerulean text-xl">
+      Dette er min Hjemmeside
+    </p>
+  </div>
+  <style>
+    div {
+      margin-top: 2rem;
+      margin-left: 2rem;
+    }
+  </style>
 </BaseLayout>

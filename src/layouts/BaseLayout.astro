@@ -3,40 +3,41 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
-const { pageTitle } = Astro.props;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style define:vars={{ skillColor, fontWeight, textCase }}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
+        <title>{title}</title>
+        <script>
+            if (
+                localStorage.theme === "dark" ||
+                (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
             }
-            .skill {
-                color: var(--skillColor);
-                font-weight: bold;
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
+
+            // Whenever the user explicitly chooses light mode
+            //localStorage.theme = 'light'
+
+            // Whenever the user explicitly chooses dark mode
+            //localStorage.theme = 'dark'
+
+            // Whenever the user explicitly chooses to respect the OS preference
+            //localStorage.removeItem('theme')
+        </script>
     </head>
-    <body>
+    <body class="bg-OffWhite dark:bg-IndigoDye">
         <Header />
-        <h1>{pageTitle}</h1>
+        <!-- <h1>{title}</h1> -->
         <slot />
         <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
     </body>
 </html>
