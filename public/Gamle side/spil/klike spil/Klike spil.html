@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="java script.js"></script>
+	<title onload="load()">KLIKE SPIL</title>
+	<link type="text/css" rel="stylesheet" href="klikespil.css" />
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+	<header>
+		<h1 id=antalklik></h1>
+	</header>
+	<main>
+		<article class="card" onclick="startgame()" id=startgame>
+			<h1>START THE GAME</h1>
+		</article>
+
+		<article class="klikespilmain" id=klikeside>
+			<article class="card" onclick="onklik()">
+				<h1>Klik on me</h1>
+				<p id=antalklik></p>
+			</article>
+
+			<article class="card" onclick="openshop()">
+				<h1>SHOP</h1>
+			</article>
+
+			<article class="card" onclick="opensetings()" id=setings>
+				<h1>SETTINGS</h1>
+			</article>
+
+		</article>
+
+		<article class="klikespilmain" id=shopside>
+
+			<article class="card" onclick="back()" id=back>
+				<h1>BACK</h1>
+			</article>
+
+			<article class="card" onclick="upgrade()" id=upgrade>
+				<h1>UPGRADE</h1>
+				<p id=prisup1></p>
+				<p id=upgrads></p>
+			</article>
+
+		</article>
+
+		<article class="klikespilmain" id=setingsside>
+			<article class="card" onclick="back()" id=back>
+				<h1>BACK</h1>
+			</article>
+			<article class="card" onclick="reset()" id=reset>
+				<h1>Reset</h1>
+			</article>
+			<article class="card" onclick="save()" id=save>
+				<h1>Save</h1>
+			</article>
+		</article>
+
+		<script>
+			load();
+		</script>
+	</main>
+</body>
+
+</html>

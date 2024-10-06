@@ -1,0 +1,170 @@
+:root {
+  --white: 255, 255, 255;
+  --red: 229, 57, 53;
+  --orange: 251, 140, 0;
+  --yellow: 253, 216, 53;
+  --green: 67, 160, 71;
+  --blue: 30, 136, 229;
+  --indigo: 57, 73, 171;
+  --violet: 156, 39, 176;
+
+  --theme-color: var(--white);
+}
+
+body {
+  background-color: rgb(238, 96, 231);
+  background-image: radial-gradient(rgba(var(--theme-color), 0.5) 15%,
+      transparent 9%);
+  background-position: 0% 0%;
+  background-size: 50px 50px;
+  background-attachment: fixed;
+  margin: 0px;
+}
+
+input,
+label {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 1em;
+}
+
+#example-wrapper {
+  margin: 4rem auto;
+  margin-bottom: 6rem;
+  padding: 1rem;
+  width: min(600px, calc(100% - 2rem));
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+
+    "⬅️ 🔼"
+    "O 🔼"
+    "O 🔼"
+    "O 🔼";
+}
+
+.example-section {
+  background-color: rgba(50, 50, 50, 0.2);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgb(var(--theme-color));
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.example-section.pris {
+  flex-direction: column;
+  height: max-content;
+
+}
+
+.example-section.cart {
+  height: max-content;
+  width: 120px;
+}
+
+
+.example-button {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  color: rgb(var(--theme-color));
+  flex-grow: 1;
+  outline: none;
+  padding: 1.25rem;
+  cursor: pointer;
+}
+
+.example-button.short {
+  color: white;
+  padding: 0.3rem 1.5rem;
+}
+
+.example-button:hover,
+.example-button:focus {
+  border: 1px solid rgb(var(--theme-color));
+}
+
+.example-button>i {
+  height: 2rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  width: 2rem;
+}
+
+#side-bar-section {
+  grid-area: ⬅️;
+}
+
+#side-bar-cart {
+  grid-area: O;
+
+}
+
+#shape-section {
+  grid-area: 🔼;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+#shape-section>.example-button {
+  border: 1px solid rgba(var(--theme-color), 0.4);
+  height: 100px;
+}
+
+
+#shape-section>.example-button:hover,
+#shape-section>.example-button:focus {
+  background-color: rgba(var(--theme-color), 0.1);
+  border-color: rgb(var(--theme-color));
+}
+
+#smartcart {
+  grid-area: 0;
+}
+
+@media(max-width: 500px) {
+  #example-wrapper {
+    grid-template-areas:
+      "🎨"
+      "⬅️"
+      "🔍"
+      "🪟"
+      "🅿️"
+      "🖼️"
+      "🔼"
+      "0"
+      "1";
+    margin-top: 1rem;
+  }
+
+  .example-button>i {
+    height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  #theme-picker-section {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+
+  #theme-picker-section>input {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  #side-bar-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
