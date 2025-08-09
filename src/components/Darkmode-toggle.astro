@@ -3,11 +3,24 @@
 ---
 
 <button
+  id="darkmode-toggle"
   onclick="toggleDarkMode()"
-  class="bg-Keppel hover:bg-Mindaro hover:text-LapisLazuli">DarkMode</button
+  class="bg-Keppel hover:bg-Mindaro hover:text-LapisLazuli flex items-center gap-2"
+  aria-label="Toggle dark mode"
 >
+  <span id="darkmode-emoji" class="text-2xl align-middle">☀️</span>
+</button>
 
 <script is:inline>
+  function setButtonEmoji() {
+    const emoji = document.getElementById("darkmode-emoji");
+    if (document.documentElement.classList.contains("dark")) {
+      emoji.textContent = "🌙";
+    } else {
+      emoji.textContent = "☀️";
+    }
+  }
+
   function toggleDarkMode() {
     if (localStorage.theme === "dark") {
       document.documentElement.classList.remove("dark");
@@ -16,7 +29,12 @@
       document.documentElement.classList.add("dark");
       localStorage.theme = "dark";
     }
+    setButtonEmoji();
   }
+
+  // Set emoji as early as possible
+  setButtonEmoji();
+  document.addEventListener("DOMContentLoaded", setButtonEmoji);
 </script>
 
 <style>
@@ -24,5 +42,11 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  #darkmode-emoji {
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: middle;
   }
 </style>
