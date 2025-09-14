@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Spejder">
+    <div class="mt-8 ml-8">
+        <h1 class="dark:text-LightGreen2 text-3xl text-Cerulean">Spejder points optæling og givning</h1>
+        <p class="dark:text-LightGreen2 text-Cerulean text-xl">Her kan du se og give spejder points. Til Juleturen</p>
+        
+        <form id="pointForm" class="mt-6 space-y-4" onsubmit="event.preventDefault(); sendPoint();">
+            <div>
+                <label for="holdnavn">Holdnavn:</label>
+                <input id="holdnavn" name="holdnavn" required class="border rounded px-2 py-1" />
+            </div>
+            <div>
+                <label for="holdnummer">Holdnummer:</label>
+                <input id="holdnummer" name="holdnummer" type="number" required class="border rounded px-2 py-1" />
+            </div>
+            <div>
+                <label for="kategori1">Point kategori 1:</label>
+                <input id="kategori1" name="kategori1" type="number" required class="border rounded px-2 py-1" />
+            </div>
+            <div>
+                <label for="kategori2">Point kategori 2:</label>
+                <input id="kategori2" name="kategori2" type="number" required class="border rounded px-2 py-1" />
+            </div>
+            <button type="submit" class="bg-Cerulean text-white px-4 py-2 rounded">Send point</button>
+        </form>
+        <script is:inline>
+        async function sendPoint() {
+            const form = document.getElementById('pointForm');
+            const data = {
+                holdnavn: form.holdnavn.value,
+                holdnummer: form.holdnummer.value,
+                kategori1: form.kategori1.value,
+                kategori2: form.kategori2.value
+            };
+            try {
+                await fetch('https://script.google.com/macros/s/AKfycbyl4wo4pWDMwOUOxlKxvWCiodwR043Z-9rBZ-M2GCBz2vUaL7sB3CefPrIamQsL9qj9UA/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                alert('Point sendt!');
+                form.reset();
+            } catch (e) {
+                alert('Der opstod en fejl ved afsendelse.');
+            }
+        }
+        </script>
+    </div>
+</BaseLayout>
