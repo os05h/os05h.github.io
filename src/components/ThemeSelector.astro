@@ -1,0 +1,97 @@
+---
+import { themes } from "../themes.js";
+---
+
+<div class="theme-selector">
+    <select
+        id="theme-select"
+        class="theme-dropdown bg-[var(--accent)] hover:bg-[var(--accentLight)] hover:text-[var(--primary)] px-3 py-2 rounded cursor-pointer"
+    >
+        {
+            Object.entries(themes).map(([key, theme]) => (
+                <option value={key}>{theme.name}</option>
+            ))
+        }
+    </select>
+</div>
+
+<script is:inline define:vars={{ themesJSON: JSON.stringify(themes) }}>
+    const themeSelect = document.getElementById("theme-select");
+    const themesData = JSON.parse(themesJSON);
+
+    // Load saved theme or use default
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem("selectedTheme") || "blueOcean";
+        themeSelect.value = savedTheme;
+        applyTheme(savedTheme);
+    }
+
+    // Apply theme by setting CSS variables
+    function applyTheme(themeName) {
+        const theme = themesData[themeName];
+
+        if (theme && theme.colors) {
+            const colors = theme.colors;
+            document.documentElement.style.setProperty(
+                "--color-primary",
+                colors.primary,
+            );
+            document.documentElement.style.setProperty(
+                "--color-secondary",
+                colors.secondary,
+            );
+            document.documentElement.style.setProperty(
+                "--color-accent",
+                colors.accent,
+            );
+            document.documentElement.style.setProperty(
+                "--color-accentLight",
+                colors.accentLight,
+            );
+            document.documentElement.style.setProperty(
+                "--color-background",
+                colors.background,
+            );
+            document.documentElement.style.setProperty(
+                "--color-cardBg",
+                colors.cardBg,
+            );
+            document.documentElement.style.setProperty(
+                "--color-text",
+                colors.text,
+            );
+            document.documentElement.style.setProperty(
+                "--color-navBg",
+                colors.navBg,
+            );
+
+            localStorage.setItem("selectedTheme", themeName);
+        }
+    }
+
+    themeSelect.addEventListener("change", (e) => {
+        applyTheme(e.target.value);
+    });
+
+    // Initialize on page load
+    initializeTheme();
+</script>
+
+<style>
+    .theme-selector {
+        display: flex;
+        align-items: center;
+    }
+
+    .theme-dropdown {
+        font-size: 0.9rem;
+        border: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .theme-dropdown:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+</style>

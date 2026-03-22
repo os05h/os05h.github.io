@@ -1,21 +1,33 @@
 ---
-
+import ThemeSelector from "./ThemeSelector.astro";
 ---
 
-<div class="nav-links bg-LapisLazuli space-x-8">
-    <a href="/" class="bg-Keppel hover:bg-Mindaro hover:text-LapisLazuli">Home</a>
-    <a href="/projekter" class="bg-Keppel hover:bg-Mindaro hover:text-LapisLazuli">Projekter</a>
+<div
+    class="nav-container bg-[var(--color-navBg)] flex justify-between items-center px-8 py-4 space-x-8"
+>
+    <div class="nav-links flex space-x-8">
+        <a
+            href="/"
+            class="bg-[var(--color-accent)] hover:bg-[var(--color-accentLight)] hover:text-[var(--color-navBg)] px-4 py-2 rounded transition"
+            >Home</a
+        >
+        <a
+            href="/projekter"
+            class="bg-[var(--color-accent)] hover:bg-[var(--color-accentLight)] hover:text-[var(--color-navBg)] px-4 py-2 rounded transition"
+            >Projekter</a
+        >
+    </div>
+    <ThemeSelector />
 </div>
 
 <style>
-    div {
-        padding: 0.7rem 2rem;
-        text-decoration: none;
+    .nav-container {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    a {
-        padding: 0.5rem 1rem;
 
+    a {
         text-decoration: none;
-        border-radius: 0.25rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
     }
 </style>

@@ -6,29 +6,38 @@ import "../styles/global.css";
 const { title } = Astro.props;
 ---
 
-<html lang="en" class="dark">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-        <script>
-            if (
-                localStorage.theme === "dark" ||
-                (!("theme" in localStorage) &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches)
-            ) {
-                document.documentElement.classList.add("dark");
-            } else {
-                document.documentElement.classList.remove("dark");
+        <style>
+            :root {
+                --color-primary: #1a759f;
+                --color-secondary: #184e77;
+                --color-accent: #52b69a;
+                --color-accentLight: #d9ed92;
+                --color-background: #1a759f;
+                --color-cardBg: #eff7ff;
+                --color-text: #1a759f;
+                --color-navBg: #1e6091;
             }
-        </script>
+        </style>
     </head>
-    <body class="bg-OffWhite dark:bg-IndigoDye min-h-screen flex flex-col">
-        <Header />
-        <!-- <h1>{title}</h1> -->
-        <slot class="flex-1" />
-        <Footer />
+    <body
+        class="min-h-screen flex flex-col p-4 md:p-8"
+        style="background-color: var(--color-background);"
+    >
+        <div
+            class="flex-1 flex flex-col max-w-4xl mx-auto w-full rounded-lg shadow-lg overflow-hidden"
+            style="background-color: var(--color-cardBg);"
+        >
+            <Header />
+            <!-- <h1>{title}</h1> -->
+            <slot class="flex-1" />
+            <Footer />
+        </div>
     </body>
 </html>
