@@ -26,30 +26,30 @@ export const themes = {
             navBg: "#081c15",
         }
     },
-    sunset: {
-        name: "Sunset",
+    midnight: {
+        name: "Midnight Dark",
         colors: {
-            primary: "#d97706",
-            secondary: "#92400e",
-            accent: "#f59e0b",
-            accentLight: "#fcd34d",
-            background: "#92400e",
-            cardBg: "#fef3c7",
-            text: "#92400e",
-            navBg: "#78350f",
+            primary: "#e0e7ff",
+            secondary: "#c7d2fe",
+            accent: "#a78bfa",
+            accentLight: "#ddd6fe",
+            background: "#0f0a1a",
+            cardBg: "#1f1535",
+            text: "#e0e7ff",
+            navBg: "#2d1b4a",
         }
     },
-    midnight: {
-        name: "Midnight Purple",
+    black: {
+        name: "Pure Black",
         colors: {
-            primary: "#6366f1",
-            secondary: "#4f46e5",
-            accent: "#a28bfa",
-            accentLight: "#e9d5ff",
-            background: "#312e81",
-            cardBg: "#ede9fe",
-            text: "#4338ca",
-            navBg: "#3730a3",
+            primary: "#ffffff",
+            secondary: "#e5e5e5",
+            accent: "#00d9ff",
+            accentLight: "#4dffff",
+            background: "#000000",
+            cardBg: "#1a1a1a",
+            text: "#ffffff",
+            navBg: "#0d0d0d",
         }
     }
 };
