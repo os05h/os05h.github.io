@@ -1,6 +1,5 @@
 ---
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import { themes } from "../themes.js";
 import "../styles/global.css";
 
@@ -81,7 +80,6 @@ const { title } = Astro.props;
             <Header />
             <!-- <h1>{title}</h1> -->
             <slot class="flex-1" />
-            <Footer />
         </div>
     </body>
 </html>
