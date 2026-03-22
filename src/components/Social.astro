@@ -4,7 +4,10 @@ const { platform, username } = Astro.props;
 
 <a
     href={`https://www.${platform}.com/${username}`}
-    class="bg-Keppel hover:bg-Mindaro hover:text-LapisLazuli">{platform}</a
+    class="social-link"
+    style="background-color: var(--color-accent); color: var(--color-text);"
+    onmouseover="this.style.backgroundColor='var(--color-accentLight)';"
+    onmouseout="this.style.backgroundColor='var(--color-accent)';">{platform}</a
 >
 
 <style>
@@ -12,5 +15,7 @@ const { platform, username } = Astro.props;
         padding: 0.5rem 1rem;
         text-decoration: none;
         border-radius: 0.25rem;
+        transition: all 0.2s ease;
+        font-weight: 500;
     }
 </style>

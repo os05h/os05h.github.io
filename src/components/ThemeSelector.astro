@@ -5,7 +5,8 @@ import { themes } from "../themes.js";
 <div class="theme-selector">
     <select
         id="theme-select"
-        class="theme-dropdown bg-[var(--accent)] hover:bg-[var(--accentLight)] hover:text-[var(--primary)] px-3 py-2 rounded cursor-pointer"
+        class="theme-dropdown px-4 py-2 rounded cursor-pointer transition font-medium border-none"
+        style="background-color: var(--color-accent); color: var(--color-text);"
     >
         {
             Object.entries(themes).map(([key, theme]) => (
@@ -88,10 +89,23 @@ import { themes } from "../themes.js";
         border: none;
         font-weight: 500;
         transition: all 0.2s ease;
+        color: var(--color-text) !important;
+    }
+
+    .theme-dropdown:hover {
+        background-color: var(--color-accentLight) !important;
+        color: var(--color-text) !important;
     }
 
     .theme-dropdown:focus {
         outline: 2px solid var(--color-primary);
         outline-offset: 2px;
+    }
+
+    /* Style option items */
+    .theme-dropdown option {
+        background-color: var(--color-cardBg);
+        color: var(--color-text);
+        font-weight: 500;
     }
 </style>
